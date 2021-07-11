@@ -1,0 +1,434 @@
+/******************************************************************
+
+Stylesheet: スマートフォンサイズのモニタで適用
+
+******************************************************************/
+/*-------------------------------
+
+	base
+
+-------------------------------*/
+.vertical-heading {
+	margin-bottom: 0;
+	font-size: 2.4rem;
+}
+.heading {
+	margin-bottom: 50px;
+	font-size: 2.4rem;
+}
+.main-btn {
+	padding: 10px 30px;
+}
+.sub-btn {
+	position: relative;
+	left: -45px;
+	display: inline-block;
+	font-size: 1.2rem;
+	color: #333333;
+	transition: all .3s;
+	&:hover {
+		color: #808000;
+		&::before {
+			left: 5px;
+			background-image: linear-gradient(#808000 70%, transparent 30%);
+		}
+		&::after {
+			left: 82px;
+			background-image: linear-gradient(#808000 70%, transparent 30%);
+		}
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		background-image: linear-gradient(#333333 70%, transparent 30%);
+		width: 80px;
+		height: 1px;
+		transition: all .3s;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 77px;
+		transform: rotate(-45deg);
+		background-image: linear-gradient(#333333 70%, transparent 30%);
+		width: 1px;
+		height: 20px;
+		transition: all .3s;
+	}
+}
+/*-------------------------------
+
+	header
+
+-------------------------------*/
+.header {
+	> h1 {
+		top: 15px;
+		left: 20px;
+		width: 80px;
+	}
+	> .hamburger {
+		position: absolute;
+		top: 22px;
+		right: 20px;
+		display: block;
+		z-index: 9999;
+		> span {
+			position: relative;
+			display: block;
+			background-color: #fff;
+			width: 30px;
+			height: 2px;
+			transition: all .3s;
+			&:first-child {
+				margin-bottom: 4px;
+			}
+			&:nth-child(2) {
+				margin-bottom: 4px;
+			}
+		}
+	}
+	> nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 20px 20px 50px;
+		background-color: #fff;
+		visibility: hidden;
+		opacity: 0;
+		z-index: 1000;
+		transition: all .3s;
+		> ul {
+			flex-direction: column;
+			justify-content: stretch;
+			align-items: flex-start;
+			margin-bottom: 20px;
+			> li {
+				padding: 10px 0;
+				margin-left: 0;
+				border-bottom: 1px solid #e0e0e0;
+				width: 70%;
+				> a {
+					display: block;
+					writing-mode: horizontal-tb;
+					color: #333333;
+				}
+			}
+		}
+		> .info {
+			display: block;
+			letter-spacing: 0.07em;
+			> .address {
+				margin-bottom: 10px;
+				> .postal-code {
+					font-size: 1.2rem;
+				}
+				> p {
+					font-size: 1.2rem;
+				}
+			}
+			> .tel {
+				margin-bottom: 10px;
+				> span {
+					font-size: 1.2rem;
+				}
+				> p {
+					font-size: 1.2rem;
+				}
+			}
+			> .time {
+				margin-bottom: 10px;
+				> span {
+					font-size: 1.2rem;
+				}
+				> p {
+					font-size: 1.2rem;
+				}
+			}
+			> .date {
+				> span {
+					font-size: 1.2rem;
+				}
+				> p {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+	> .hamburger-open {
+		position: fixed;
+		> span {
+			&:nth-child(1) {
+				transform: translateY(6px) rotate(-30deg);
+				background-color: #333333;
+			}
+			&:nth-child(2) {
+				opacity: 0;
+			}
+			&:nth-child(3) {
+				transform: translateY(-6px) rotate(30deg);
+				background-color: #333333;
+			}
+		}
+		+ nav {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+.body-fixed {
+	overflow: hidden;
+}
+/*-------------------------------
+
+	main-visual
+
+-------------------------------*/
+.swiper-container {
+	> p {
+		font-size: 2.6rem;
+	}
+}
+/*-------------------------------
+
+	concept
+
+-------------------------------*/
+.concept {
+	padding: 50px 0;
+	text-align: center;
+	&__inner {
+		padding: 0 20px;
+		width: 100%;
+	}
+	&__body {
+		flex-direction:column;
+		align-items: center;
+	}
+	&__heading {
+		top: 0;
+		margin-left: 0;
+		margin-bottom: 50px;
+	}
+	&__text {
+		text-align: left;
+		line-height: 1.9;
+		margin-bottom: 30px;
+		height: 250px;
+		font-size: 1.4rem;
+	}
+	&__link {
+		float: none;
+		display: inline-block;
+		margin: 0 auto;
+	}
+	&__image {
+		display: none;
+	}
+}
+/*-------------------------------
+
+	leaf
+
+-------------------------------*/
+.leaf {
+	flex-direction: column-reverse;
+	padding-bottom: 50px;
+	&::after {
+		content: none;
+	}
+	&__text {
+		padding: 0 20px;
+		width: 100%;
+		font-size: 1.4rem;
+		> h2 {
+			float: right;
+		}
+	}
+	&__image {
+		margin-bottom: 30px;
+		width: 100%;
+		max-width: none;
+		height: 250px;
+	}
+}
+/*-------------------------------
+
+	sweets
+
+-------------------------------*/
+.sweets {
+	padding-bottom: 50px;
+	&::after {
+		content: none;
+	}
+	&__inner {
+		width: 100%;
+	}
+	&__body {
+		flex-direction: column;
+	}
+	&__text {
+		padding: 0 20px;
+		width: 100%;
+		font-size: 1.4rem;
+		> h2 {
+			float: right;
+		}
+	}
+	&__image {
+		margin-bottom: 30px;
+		width: 100%;
+		max-width: none;
+		height: 250px;
+	}
+	&__heading {
+		width: auto;
+		&::after {
+			top: 2px;
+			left: -10px;
+			right: auto;
+		}
+	}
+}
+/*-------------------------------
+
+	gift
+
+-------------------------------*/
+.gift {
+	padding-bottom: 50px;
+	&::after {
+		content: none;
+	}
+	&__inner {
+		width: 100%;
+	}
+	&__body {
+		flex-direction: column-reverse;
+	}
+	&__text {
+		padding: 0 20px;
+		width: 100%;
+		font-size: 1.4rem;
+		> h2 {
+			float: right;
+		}
+	}
+	&__image {
+		margin-bottom: 30px;
+		width: 100%;
+		max-width: none;
+		height: 250px;
+	}
+}
+/*-------------------------------
+
+	blog
+
+-------------------------------*/
+.blog {
+	padding: 0 0 50px;
+	> h2 {
+		margin-bottom: 30px;
+	}
+	&__inner {
+		padding: 0 20px;
+		width: 100%;
+	}
+	&__body {
+		flex-wrap: wrap;
+		> li {
+			margin-bottom: 20px;
+			text-align: left;
+			width: 48%;
+			> a {
+				> .date {
+					font-size: 1rem;
+				}
+				> p {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+	&__image {
+		height: 150px;
+	}
+}
+/*-------------------------------
+
+	footer
+
+-------------------------------*/
+.footer {
+	padding-top: 50px;
+	> h2 {
+		margin: 0 auto 30px auto;
+		width: 80px;
+	}
+	&__inner {
+		padding: 0 20px;
+		width: 100%;
+	}
+	&__body {
+		flex-direction: column;
+	}
+	&__info {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	&__address {
+		> .postal-code {
+			font-size: 1.4rem;
+		}
+		> p {
+			white-space: pre-wrap;
+			font-size: 1.4rem;
+		}
+	}
+	&__tel {
+		> span {
+			font-size: 1.4rem;
+		}
+		> p {
+			font-size: 1.4rem;
+		}
+	}
+	&__time {
+		> span {
+			font-size: 1.4rem;
+		}
+		> p {
+			font-size: 1.4rem;
+		}
+	}
+	&__date {
+		> span {
+			font-size: 1.4rem;
+		}
+		> p {
+			font-size: 1.4rem;
+		}
+	}
+	&__nav {
+		> li {
+			width: 50%;
+			> a {
+				font-size: 1.4rem;
+			}
+		}
+	}
+	> p {
+		padding: 15px 0;
+		> small {
+			font-size: 1rem;
+		}
+	}
+}
